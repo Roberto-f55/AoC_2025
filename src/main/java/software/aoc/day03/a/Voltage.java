@@ -67,6 +67,6 @@ public class Voltage {
             }
 
         }
-        return max_value2 != "0" ? x_mayor_y(max_value3, max_value1 + max_value2) : max_value3;
+        return max_value2.equals("0") ? x_mayor_y(max_value3, max_value1 + max_value2) : max_value3;
     }
 }
