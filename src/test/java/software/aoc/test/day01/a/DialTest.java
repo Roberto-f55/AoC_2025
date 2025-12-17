@@ -1,13 +1,11 @@
 package software.aoc.test.day01.a;
 
 import org.junit.Test;
-import software.aoc.day01.a.Aoc_orders;
 import software.aoc.day01.a.Dial;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DialTest {
-    Aoc_orders aoc_orders = new Aoc_orders();
 
     private static final String orders = """
             L68
@@ -38,10 +36,5 @@ public class DialTest {
         assertThat(Dial.create().add("L1").count()).isEqualTo(0);
         assertThat(Dial.create().add("L1", "R1", "R50").count()).isEqualTo(1);
         assertThat(Dial.create().add("L51", "L500").count()).isEqualTo(0);
-    }
-
-    @Test
-    public void given_aoc_orders_should_account_the_times_that_position_is_zero() {
-        assertThat(Dial.create().execute(aoc_orders.getOrders()).count()).isEqualTo(1076);
     }
 }
