@@ -1,8 +1,6 @@
 package software.aoc.day07.a;
 
 import software.aoc.Reader;
-import software.aoc.day06.a.Problem;
-
 import java.util.List;
 
 public class Main07a {
