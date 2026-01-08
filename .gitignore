@@ -41,4 +41,4 @@ build/
 .jar
 .class
 .exe
-.txt
+**/resources/
