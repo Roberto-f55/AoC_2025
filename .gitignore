@@ -42,3 +42,4 @@ build/
 .class
 .exe
 **/resources/
+*.txt
