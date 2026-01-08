@@ -1,7 +1,6 @@
 package software.aoc.test.day06.a;
 
 import org.junit.Test;
-import software.aoc.day06.a.Problem;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
