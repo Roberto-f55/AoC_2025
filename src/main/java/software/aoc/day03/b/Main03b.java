@@ -1,6 +1,8 @@
 package software.aoc.day03.b;
 
 import software.aoc.Reader;
+import software.aoc.day03.Voltage;
+
 import java.util.List;
 
 public class Main03b {

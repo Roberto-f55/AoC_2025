@@ -1,7 +1,7 @@
 package software.aoc.test.day03.a;
 
 import org.junit.Test;
-import software.aoc.day03.a.Voltage;
+import software.aoc.day03.Voltage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,14 +15,14 @@ public class BatteryTest {
 
     @Test
     public void max_voltage_between_batteries(){
-        assertThat(Voltage.create().batteries("987654321111111").max_vol()).isEqualTo("98");
-        assertThat(Voltage.create().batteries("811111111111119").max_vol()).isEqualTo("89");
-        assertThat(Voltage.create().batteries("234234234234278").max_vol()).isEqualTo("78");
-        assertThat(Voltage.create().batteries("818181911112111").max_vol()).isEqualTo("92");
+        assertThat(Voltage.create().batteries("987654321111111").sum(2)).isEqualTo(98L);
+        assertThat(Voltage.create().batteries("811111111111119").sum(2)).isEqualTo(89L);
+        assertThat(Voltage.create().batteries("234234234234278").sum(2)).isEqualTo(78L);
+        assertThat(Voltage.create().batteries("818181911112111").sum(2)).isEqualTo(92L);
     }
 
     @Test
     public void sum_max_voltage_between_batteries(){
-        assertThat(Voltage.create().add(batteries).sum()).isEqualTo(357);
+        assertThat(Voltage.create().add(batteries).sum(2)).isEqualTo(357L);
     }
 }

@@ -1,4 +1,4 @@
-package software.aoc.day03.b;
+package software.aoc.day03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ public class Voltage {
 
     public Voltage batteries(String... bats) {
         Arrays.stream(bats)
-                .forEach(this::add_bats);
+                .forEach(this::addBats);
         return this;
     }
 
@@ -26,29 +26,18 @@ public class Voltage {
         return this;
     }
 
-    private void add_bats(String s) {
+    private void addBats(String s) {
         this.batteries.add(s);
-    }
-
-    public String max_vol(int maxBatts) {
-        for (String value : batteries){
-            return max_vol(value, maxBatts);
-        }
-        return "";
-    }
-
-    private String x_mayor_y(String first, String scnd) {
-        return Integer.parseInt(first) > Integer.parseInt(scnd) ? first : scnd ;
     }
 
     public long sum(int maxBatts) {
         return batteries.stream()
-                .map(bat -> max_vol(bat, maxBatts))
+                .map(bat -> maxVol(bat, maxBatts))
                 .mapToLong(Long::parseLong)
                 .sum();
     }
 
-    private String max_vol(String bats, int maxBatts) {
+    private String maxVol(String bats, int maxBatts) {
         StringBuilder solution = new StringBuilder();
         int start = 0;
 
