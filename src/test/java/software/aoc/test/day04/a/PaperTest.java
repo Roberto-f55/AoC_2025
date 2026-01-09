@@ -1,13 +1,13 @@
 package software.aoc.test.day04.a;
 
 import org.junit.Test;
-import software.aoc.day04.PaperRow;
+import software.aoc.day04.PapersManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PaperTest {
 
-    private String matrix_of_papers = """
+    private String matrixOfPapers = """
             ..@@.@@@@.
             @@@.@.@.@@
             @@@@@.@.@@
@@ -22,14 +22,13 @@ public class PaperTest {
 
     @Test
     public void papers_in_a_row(){
-        //Paper paper = Paper.create();
-        assertThat(PaperRow.create().add("..@@.@@@@.").numberOfPapers()).isEqualTo(6);
-        assertThat(PaperRow.create().add("@.@@@@..@.").numberOfPapers()).isEqualTo(6);
-        assertThat(PaperRow.create().add(".@@@@@@@@.").numberOfPapers()).isEqualTo(8);
+        assertThat(PapersManager.create().add("..@@.@@@@.").numberOfPapers()).isEqualTo(6);
+        assertThat(PapersManager.create().add("@.@@@@..@.").numberOfPapers()).isEqualTo(6);
+        assertThat(PapersManager.create().add(".@@@@@@@@.").numberOfPapers()).isEqualTo(8);
     }
 
     @Test
     public void papers_in_a_matrix(){
-        assertThat(PaperRow.create().put(matrix_of_papers).numberOfPapers()).isEqualTo(13);
+        assertThat(PapersManager.create().with(matrixOfPapers).numberOfPapers()).isEqualTo(13);
     }
 }

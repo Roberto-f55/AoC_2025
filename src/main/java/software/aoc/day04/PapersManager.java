@@ -21,6 +21,12 @@ public class PapersManager {
         return this;
     }
 
+    public PapersManager with(String someRows) {
+        Arrays.stream(someRows.split("\n"))
+                .forEach(this::add);
+        return this;
+    }
+
     private void add(String row) {
         grid.add(new PaperRow(row));
     }
