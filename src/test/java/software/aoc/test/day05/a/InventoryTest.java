@@ -1,6 +1,8 @@
 package software.aoc.test.day05.a;
 
 import org.junit.Test;
+import software.aoc.day05.Inventory;
+import software.aoc.day05.InventoryBuilder;
 import software.aoc.day05.a.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,11 +31,11 @@ public class InventoryTest {
 
     @Test
     public void small_inventory_should_have_fresh_ingredients(){
-        assertThat(Inventory.create().add(mockInventory).countFreshIngredients()).isEqualTo(1);
+        assertThat(InventoryBuilder.createFrom(mockInventory).countFreshIngredients()).isEqualTo(1);
     }
 
     @Test
     public void medium_inventory_should_have_fresh_ingredients(){
-        assertThat(Inventory.create().add(mediumInventory).countFreshIngredients()).isEqualTo(3);
+        assertThat(InventoryBuilder.createFrom(mediumInventory).countFreshIngredients()).isEqualTo(3);
     }
 }
