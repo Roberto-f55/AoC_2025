@@ -1,15 +1,16 @@
 package software.aoc.test.day06.a;
 
 import org.junit.Test;
+import software.aoc.day06.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class OperationsTest {
+public class OperationTest {
 
     private final String smallProblem =
-            "123 328  51 64 \n" + 
-            " 45 64  387 23 \n" +
-            "*   +   *   +  \n";
+            "123 328  51 64 \n" +
+                    " 45 64  387 23 \n" +
+                    "*   +   *   +  \n";
 
     private final String bigProblem =
             "123 328  51 64 \n" +
@@ -21,13 +22,13 @@ public class OperationsTest {
 
     @Test
     public void small_problem_should_be_easy(){
-        Problem problem = Problem.create();
-        assertThat(problem.with(smallProblem).solution()).isEqualTo(25751);
+        OperationStore store = OperationsBuilder.createA().with(smallProblem).build();
+        assertThat(store.calculate()).isEqualTo(25751L);
     }
 
     @Test
     public void big_problem_should_be_easy(){
-        Problem problem = Problem.create();
-        assertThat(problem.with(bigProblem).solution()).isEqualTo(4277556);
+        OperationStore store = OperationsBuilder.createA().with(bigProblem).build();
+        assertThat(store.calculate()).isEqualTo(4277556L);
     }
 }
