@@ -1,7 +1,8 @@
 package software.aoc.test.day07.a;
 
 import org.junit.Test;
-import software.aoc.day07.a.TachyonTree;
+import software.aoc.day07.TachyonsTreeBuilder;
+import software.aoc.day07.TachyonsTreeManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,14 +30,14 @@ public class TachyonsTest {
 
     @Test
     public void small_structure_should_be_easy(){
-        TachyonTree tachyonTree = TachyonTree.create();
-        assertThat(tachyonTree.with(".......S.......\n...............").countTachyons()).isEqualTo(1);
+        TachyonsTreeManager tachyonTree = TachyonsTreeBuilder.create().with(".......S.......\n...............").build();
+        assertThat(tachyonTree.countTachyonsA()).isEqualTo(1);
     }
 
     @Test
     public void basic_aoc_test_should_be_fine(){
-        TachyonTree tachyonTree = TachyonTree.create();
-        assertThat(tachyonTree.with(treeStructure).countTachyons()).isEqualTo(21);
+        TachyonsTreeManager tachyonTree = TachyonsTreeBuilder.create().with(treeStructure).build();
+        assertThat(tachyonTree.countTachyonsA()).isEqualTo(21);
     }
 
 
