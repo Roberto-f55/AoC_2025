@@ -22,22 +22,22 @@ public class IdTest {
 
     @Test
     public void find_falseid_between_2ids(){
-        assertThat(Expert.create().add("11-22").find("A")).isEqualTo(new String[]{"11", "22"});
-        assertThat(Expert.create().add("95-115").find("A")).isEqualTo(new String[]{"99"});
-        assertThat(Expert.create().add("446443-446449").find("A")).isEqualTo(new String[]{"446446"});
-        assertThat(Expert.create().add("38593856-38593862").find("A")).isEqualTo(new String[]{"38593859"});
+        assertThat(Expert.create().add("11-22").sumA()).isEqualTo(33L);
+        assertThat(Expert.create().add("95-115").sumA()).isEqualTo(99L);
+        assertThat(Expert.create().add("446443-446449").sumA()).isEqualTo(446446L);
+        assertThat(Expert.create().add("38593856-38593862").sumA()).isEqualTo(38593859L);
 
     }
 
     @Test
     public void find_falseid_between_more_than_2ids(){
-        assertThat(Expert.create().add("11-22", "95-115", "446443-446449").find("A"))
-                .isEqualTo(new String[]{"11", "22", "99", "446446"});
+        assertThat(Expert.create().add("11-22", "95-115", "446443-446449").sumA())
+                .isEqualTo(446578L);
     }
 
     @Test
     public void count_false_id(){
-        assertThat(Expert.create().execute(ids).sumA()).isEqualTo(1227775554);
+        assertThat(Expert.create().execute(ids).sumA()).isEqualTo(1227775554L);
     }
 
 }
