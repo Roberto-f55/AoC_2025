@@ -1,4 +1,4 @@
-package software.aoc.day01.a;
+package software.aoc.day01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,12 +48,30 @@ public class Dial {
         return sum(orders.stream());
     }
 
-    public int count() {
+    public int countA() {
         return (int) iterate()
                 .map(this::sumPartial)
                 .filter(s -> s == 0)
                 .count();
     }
+
+    public int countB() {
+        int pos = 50;
+        int count = 0;
+
+        for (Order order : orders) {
+            int step = order.step();
+            int d = Math.abs(step);
+
+            if (step > 0) count += (pos + d) / 100;
+            else count += (pos == 0) ? (d / 100) : (d >= pos ? 1 + (d - pos) / 100 : 0);
+
+            pos = normalize(pos + step);
+        }
+
+        return count;
+    }
+
 
     private IntStream iterate() {
         return IntStream.rangeClosed(1, orders.size()).parallel();

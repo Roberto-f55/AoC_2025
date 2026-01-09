@@ -1,6 +1,8 @@
 package software.aoc.day01.b;
 
 import software.aoc.Reader;
+import software.aoc.day01.Dial;
+
 import java.util.List;
 
 public class Main01b {
