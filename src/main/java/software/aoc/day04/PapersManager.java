@@ -1,33 +1,28 @@
-package software.aoc.day04.b;
+package software.aoc.day04;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Paper {
-    private List<String> grid;
+public class PapersManager {
+    private final List<PaperRow> grid;
 
-    public static Paper create() {
-        return new Paper();
+    public static PapersManager create(){
+        return new PapersManager();
     }
 
-    private Paper() {
+    private PapersManager(){
         this.grid = new ArrayList<>();
     }
 
-    public Paper put(String matrix_of_papers) {
-        add(matrix_of_papers.split("\n"));
-        return this;
-    }
-
-    public Paper add(String... row) {
+    public PapersManager add(String... row) {
         Arrays.stream(row)
                 .forEach(this::add);
         return this;
     }
 
     private void add(String row) {
-        grid.add(row);
+        grid.add(new PaperRow(row));
     }
 
     public Matrix matrix() {
