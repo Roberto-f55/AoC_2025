@@ -1,8 +1,7 @@
 package software.aoc.test.day09.a;
 
 import org.junit.Test;
-import software.aoc.day09.a.Rectangle;
-import software.aoc.day09.a.RectangleBuilder;
+import software.aoc.day09.RectangleSolver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,14 +21,14 @@ public class AreaTest {
 
     @Test
     public void two_redTiles_should_be_uniq_rectangle(){
-        Rectangle rectangle = RectangleBuilder.create().with("7,1\n11,1").buildRectangle();
-        assertThat(rectangle.getArea()).isEqualTo(5);
+        RectangleSolver rectangle = RectangleSolver.create(false).with("7,1\n11,1");
+        assertThat(rectangle.solve()).isEqualTo(5);
     }
 
     @Test
     public void a_lot_of_redTiles_should_be_uniq_rectangle(){
-        Rectangle rectangle = RectangleBuilder.create().with(redTiles).buildRectangle();
-        assertThat(rectangle.getArea()).isEqualTo(50);
+        RectangleSolver rectangle = RectangleSolver.create(false).with(redTiles);
+        assertThat(rectangle.solve()).isEqualTo(50);
     }
 
 }
