@@ -1,6 +1,7 @@
 package software.aoc.test.day08.a;
 
 import org.junit.Test;
+import software.aoc.day08.CircuitManager;
 import software.aoc.day08.a.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,13 +33,13 @@ public class ConnectionTest {
 
     @Test
     public void circuitManager_with_boxes_should_be_fine(){
-        CircuitManager circuitManager = CircuitManager.create().with("162,817,812\n57,618,57").divideBoxes(10);
+        CircuitManager circuitManager = CircuitManager.create().with("162,817,812\n57,618,57").connectClosestPairs(10);
         assertThat(circuitManager.countBiggest3Circuits()).isEqualTo(2);
     }
 
     @Test
     public void circuitManager_with_a_lot_of_boxes_should_be_fine(){
-        CircuitManager circuitManager = CircuitManager.create().with(boxes).divideBoxes(10);
+        CircuitManager circuitManager = CircuitManager.create().with(boxes).connectClosestPairs(10);
         assertThat(circuitManager.countBiggest3Circuits()).isEqualTo(40);
     }
 }
