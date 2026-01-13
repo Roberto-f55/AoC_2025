@@ -1,6 +1,5 @@
 package software.aoc.day10;
 
-import software.aoc.day10.b.Machine;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,19 +31,19 @@ public class MachineManager {
     }
 
     private void add(String m) {
-        machines.add(new Machine(m));
+        machines.add(Machine.from(m));
     }
 
     public long solveA() {
         return machines.stream()
-                .mapToLong(m -> m.solveA())
+                .mapToLong(m -> new FactorySolver(m).solveA())
                 .filter(l -> l!= -1)
                 .sum();
     }
 
     public  long solveB() {
         return machines.stream()
-                .mapToLong(m -> m.solveB())
+                .mapToLong(m -> new FactorySolver(m).solveB())
                 .filter(l -> l!= -1)
                 .sum();
     }

@@ -8,7 +8,7 @@ public class BitUtils {
         for (String indexStr : indices) {
             if (indexStr.isBlank()) continue;
             int index = Integer.parseInt(indexStr.trim());
-            mask |= (1L << index); // Enciende el bit en la posición 'index'
+            mask |= (1L << index);
         }
         return mask;
     }

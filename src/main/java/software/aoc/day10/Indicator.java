@@ -3,7 +3,7 @@ package software.aoc.day10;
 public record Indicator(long state) {
 
     public static Indicator initial() {
-        return new Indicator(0L); // Todo apagado al principio
+        return new Indicator(0L);
     }
 
     public static Indicator targetFrom(String text) {
