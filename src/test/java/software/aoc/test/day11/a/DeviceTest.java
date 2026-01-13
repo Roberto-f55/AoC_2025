@@ -1,7 +1,7 @@
 package software.aoc.test.day11.a;
 
 import org.junit.Test;
-import software.aoc.day11.a.DeviceManager;
+import software.aoc.day11.DeviceManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -23,6 +23,6 @@ public class DeviceTest {
     @Test
     public void some_devices_should_connect(){
         DeviceManager deviceManager = DeviceManager.create().with(devices);
-        assertThat(deviceManager.solve()).isEqualTo(5);
+        assertThat(deviceManager.solveA()).isEqualTo(5);
     }
 }
