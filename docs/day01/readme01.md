@@ -17,7 +17,7 @@ Para la arquitectura base de la solución, me enfoqué en las cualidades inheren
   La abstracción me permitió manejar la complejidad ocultando los detalles matemáticos. Implementé el método `normalize(int value)` para encapsular la fórmula de la aritmética modular `((value % 100) + 100) % 100`.De esta forma, separé el comportamiento esencial (moverse por el dial) de los detalles complejos (manejo de residuos negativos).
 
 * **Alta Cohesión:**
-  Diseñé la clase para que sus partes estén estrechamente relacionadas y enfocadas.
+  Diseñé la clase principal (Dial) para que sus partes estén estrechamente relacionadas y enfocadas. Por otro lado la clase Order es un record diseñada para apoyar a la lógica de la clase principal.
     * `parse` se enfoca solo en interpretar texto.
     * `add` se enfoca solo en guardar el estado.
     * `count` se enfoca solo en el cálculo del resultado.
