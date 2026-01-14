@@ -57,8 +57,6 @@ El reto requiere calcular:
 
 * **Patrón Iterator:** Implementado mediante el uso de la API de Streams, permitiendo recorrer y manipular los conjuntos de datos de manera uniforme y eficiente.
 
-* **Abstracción por Contrato:** Los métodos públicos definen reglas claras de interacción, asegurando que los detalles de implementación permanezcan ocultos al usuario.
-
 ---
 
 ## Lógica de Resolución

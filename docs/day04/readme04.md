@@ -17,7 +17,11 @@ Al retirar un rollo accesible, los rollos vecinos que antes estaban "bloqueados"
 ## 1. Fundamentos de Diseño
 
 * **Alta Cohesión:**
-  Las responsabilidades están segregadas de forma estricta. `PapersManager` se dedica a la construcción y almacenamiento de la estructura de datos, mientras que `Matrix` encapsula la lógica algorítmica de vecindad y la simulación del estado.
+  Las responsabilidades están segregadas de forma estricta.
+* * **`Matrix`**: Mantiene la cohesión lógica del negocio. Se encarga exclusivamente de las reglas del juego (vecinos, bloqueo, eliminación) y la manipulación de la estructura de datos 2D.
+  * **`PapersManager`**: Mantiene la cohesión de infraestructura. Su única tarea es recibir datos crudos, parsearlos y construir el objeto `Matrix`. No realiza cálculos.
+  * **`Position`**: Es un *Value Object* puro (record) cuya única responsabilidad es encapsular las coordenadas `(x, y)` de manera inmutable.
+  * **`PaperRow`**: Es un contenedor de transporte que encapsula una fila de texto, garantizando la integridad de los datos durante la carga.
 
 * **Abstracción:**
   Se oculta la complejidad del manejo de matrices bidimensionales y la lógica de detección de vecinos detrás de métodos de alto nivel como `maxNumberOfPapers()`. El usuario obtiene el resultado sin conocer los detalles de implementación.
