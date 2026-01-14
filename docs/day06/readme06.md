@@ -12,8 +12,6 @@ Este módulo resuelve problemas matemáticos presentados en una hoja de ejercici
     * `Operation`: Encapsula la ejecución de una operación aritmética individual.
     * `Operator`: Define el comportamiento funcional y la identidad de las operaciones (+, *).
 
-* **Ocultación de Información:** Los detalles de implementación, como el algoritmo de relleno (`fill`), la gestión de índices de columnas o la concatenación de caracteres, son privados. Esto asegura que cambios en el formato del input no afecten a los clientes de la clase.
-
 * **Bajo Acoplamiento:** Al separar el motor de cálculo de la lectura visual, se reducen las interdependencias. El sistema de cálculo procesa listas de `Long` sin conocer su origen (filas o columnas).
 
 * **Código Expresivo:** Se utiliza una nomenclatura descriptiva (`createOperationWithRow`, `createOperationWithColumn`) que permite comprender la estructura y el funcionamiento del código sin necesidad de desentrañar una compleja red de operaciones interconectadas.

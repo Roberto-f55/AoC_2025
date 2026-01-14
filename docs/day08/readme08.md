@@ -1,4 +1,4 @@
-# 🎄 Advent of Code - Día 8: Playground
+# Advent of Code - Día 8: Playground
 
 Esta es mi solución para el desafío del **Día 8**. El objetivo es ayudar a los Elfos a diseñar un sistema de iluminación conectando cajas de conexiones eléctricas en un espacio 3D, priorizando las conexiones más cortas para formar circuitos más grandes.
 
